@@ -1,10 +1,4 @@
-const readline = require('readline');
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
-// if
+// if 
 let suhu = 35;
 if (suhu < 37) {
     console.log("Anda sehat");
@@ -34,27 +28,26 @@ if (mata === "ngantuk" && tugas === "aman") {
 }
 
 // switch case
-rl.question('Luas bangun datar apa yang ingin anda ketahui? (persegi/segitia/persegi panjang/lingkaran): ', (pilihan) => {
-  let rumus;
-  switch (pilihan) {
-    case "persegi":
-      rumus = "sisi x sisi";
-      break;
-    case "segitia":
-      rumus = "(alas x tinggi)/2";
-      break;
-    case "persegi panjang":
-      rumus = "panjang x lebar";
-      break;
-    case "lingkaran":
-      rumus = "π*r^2";
-      break;
-    default:
-      rumus = "tidak ada";
-  }
-  console.log(`Rumus dari bangun datar ${pilihan} adalah ${rumus}`);
-  rl.close();
-});
+// switch case
+let pilihan = "lingkaran";
+let rumus;
+switch (pilihan) {
+  case "persegi":
+    rumus = "sisi x sisi";
+    break;
+  case "segitia":
+    rumus = "(alas x tinggi)/2";
+    break;
+  case "persegi panjang":
+    rumus = "panjang x lebar";
+    break;
+  case "lingkaran":
+    rumus = "π*r^2";
+    break;
+  default:
+    rumus = "tidak ada";
+}
+console.log(`Rumus dari bangun datar ${pilihan} adalah ${rumus}`);
 
 // for statement
 let total = 0;
@@ -80,14 +73,19 @@ do {
 } while (angka <= 72);
 
 //function
+const readline2 = require('readline'); // Ganti readline menjadi readline2
+const rl2 = readline2.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 function hitungJumlahHuruf(kata) {
   let jumlahHuruf = kata.length;
   return jumlahHuruf;
 }
-rl.question('Masukkan sebuah kata : ', (kata) => {
+rl2.question('Masukkan sebuah kata : ', (kata) => {
   let jumlahHuruf = hitungJumlahHuruf(kata);
 
   console.log("Jumlah huruf dalam kata tersebut adalah : " + jumlahHuruf);
 
-  rl.close();
+  rl2.close();
 });
